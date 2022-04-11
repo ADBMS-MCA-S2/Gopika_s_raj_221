@@ -1,0 +1,14 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inserets`(ID INT,NAME VARCHAR(45),SALARY INT)
+BEGIN
+ declare
+ incent int;
+ if(ID=110)
+ THEN SET incent=SALARY*0.12;
+ INSERT INTO emp(EMPLOYEEID, EMPLOYEENAME,SALARY,INCENTIVE)VALUES(ID,NAME,SALARY,incent);
+END IF;
+
+END
+USE employee;
+select * from emp;
+call inserets(110,"mania",3440);
+call inserets(121,"abi",32227);
